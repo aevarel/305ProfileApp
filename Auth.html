@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication is Fun</title>
+    <style>
+        body {text-align: center; background-color: lightseagreen; color: black;}
+    </style>
+</head>
+<body>
+<div id="authForm">
+    <h2>Sign Up or Sign In</h2>
+    <input type="email" placeholder="email" id="userEmail">
+    <input type="password" placeholder="password" id="userPassword">  <br><br>
+    <button id="signUpButton">Sign Up</button>
+    <button id="signInButton">Sign In</button>
+</div>
+
+<div id="secretContent">
+    <h3>This is top secret information that you can only see if</h3>
+    <h1>AUTHENTICATED</h1>
+    <button id="signOutButton">Sign Out</button>
+</div>
+
+    <div id="nameContent">
+
+    </div>
+    <div id="imageContent">
+
+    </div>
+    <div id="colorContent">
+
+    </div>
+    <div id="ageContent">
+
+    </div>
+    <div id="foodContent">
+
+    </div>
+
+<script type="module">
+    const firebaseConfig = {
+
+        apiKey: "AIzaSyABX23N-p1GPvug3uOc5ZIxxDVW9FdtNAs",
+
+        authDomain: "profileapp-4a308.firebaseapp.com",
+
+        databaseURL: "https://profileapp-4a308-default-rtdb.firebaseio.com",
+
+        projectId: "profileapp-4a308",
+
+        storageBucket: "profileapp-4a308.appspot.com",
+
+        messagingSenderId: "513475126287",
+
+        appId: "1:513475126287:web:ba57f5cf73d571a41e6f7a",
+
+        measurementId: "G-F4LJZS0WYH"
+
+    };
+    //Update the below URL with the appropriate version if necessary.
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
+    import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        onAuthStateChanged,
+        signOut
+        //Update the below URL with the appropriate version if necessary.
+    } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+
+    // TODO: Add SDKs for Firebase products that you want to use
+
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+
+    // Your web app's Firebase configuration
+
+
+    // Initialize Firebase
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const analytics = getAnalytics(app);
+
+    const userEmail = document.querySelector("#userEmail");
+    const userPassword = document.querySelector("#userPassword");
+    const authForm = document.querySelector("#authForm");
+    const secretContent = document.querySelector("#secretContent");
+    const signUpButton = document.querySelector("#signUpButton");
+    const signInButton = document.querySelector("#signInButton");
+    const signOutButton = document.querySelector("#signOutButton");
+
+    var user1Name = document.querySelector("#userNickname");
+    var user1Image = document.querySelector("#user1Image");
+    var user2Image = document.querySelector("#user2Image");
+
+
+
+    secretContent.style.display = 'none';
+
+    const userSignUp = async() => {
+        const signUpEmail = userEmail.value;
+        const signUpPassword = userPassword.value;
+        createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                console.log(user);
+                alert("Your account has been created!");
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode + errorMessage)
+            })
+    }
+
+    const userSignIn = async() => {
+        const signInEmail = userEmail.value;
+        const signInPassword = userPassword.value;
+        signInWithEmailAndPassword(auth, signInEmail, signInPassword)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                alert("You have signed in successfully!");
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode + errorMessage)
+            })
+    }
+
+    const checkAuthState = async() => {
+        onAuthStateChanged(auth, user => {
+            if(user) {
+                authForm.style.display = 'none';
+                secretContent.style.display = 'block';
+            }
+            else {
+                authForm.style.display = 'block';
+                secretContent.style.display = 'none';
+            }
+        })
+    }
+
+    const userSignOut = async() => {
+        await signOut(auth);
+    }
+
+    checkAuthState();
+
+    signUpButton.addEventListener('click', userSignUp);
+    signInButton.addEventListener('click', userSignIn);
+    signOutButton.addEventListener('click', userSignOut);
+</script>
+</body>
+</html>
