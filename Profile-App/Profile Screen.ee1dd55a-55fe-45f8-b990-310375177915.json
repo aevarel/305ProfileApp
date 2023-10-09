@@ -57,6 +57,36 @@
     },
     "children": [
         {
+            "type": "AdMobBanner",
+            "label": "AdMob Banner",
+            "translatedName": "AdMob Banner",
+            "properties": {
+                "Visible": true,
+                "AdUnitID": "ca-app-pub-3940256099942544/6300978111",
+                "AdUnitID_iOS": "ca-app-pub-3940256099942544/6300978111",
+                "TestMode": true,
+                "Width": 375,
+                "Height": 32,
+                "X": 0,
+                "ParentId": "ee1dd55a-55fe-45f8-b990-310375177915",
+                "Y": 632.4666748046875,
+                "RelativeX": 0,
+                "RelativeY": 632,
+                "position": "absolute",
+                "edgeOffsets": 632.4666748046875,
+                "style": {
+                    "position": "absolute",
+                    "left": "27.2%",
+                    "top": "90.77461391374625%",
+                    "display": "flex"
+                }
+            },
+            "children": [],
+            "id": "50fc24da-a8fd-4f3e-8816-7ed0be509ea8",
+            "thunkableVersion": 423,
+            "name": "AdMob_Banner2"
+        },
+        {
             "type": "Image",
             "translatedName": "Image",
             "properties": {
@@ -115,10 +145,10 @@
                 "Height": 36,
                 "Width": 212,
                 "Visible": true,
-                "X": 10,
-                "Y": 500,
-                "RelativeX": 10,
-                "RelativeY": 500,
+                "X": 11,
+                "Y": 470,
+                "RelativeX": 11,
+                "RelativeY": 470,
                 "ResizeMode": "STRETCH",
                 "style": {
                     "color": "rgba(0, 0, 0, 1)",
@@ -159,7 +189,7 @@
                 },
                 "ParentId": "ee1dd55a-55fe-45f8-b990-310375177915",
                 "position": "absolute",
-                "edgeOffsets": 471,
+                "edgeOffsets": 470.00000000000006,
                 "children": "No Favorite Food"
             },
             "children": [],
@@ -181,10 +211,10 @@
                 "Height": 70,
                 "Width": 340,
                 "Visible": true,
-                "X": 20,
-                "Y": 588,
-                "RelativeX": 20,
-                "RelativeY": 588,
+                "X": 12,
+                "Y": 518,
+                "RelativeX": 12,
+                "RelativeY": 518,
                 "ResizeMode": "STRETCH",
                 "style": {
                     "color": "rgba(255, 0, 0, 1)",
@@ -225,7 +255,7 @@
                 },
                 "ParentId": "ee1dd55a-55fe-45f8-b990-310375177915",
                 "position": "absolute",
-                "edgeOffsets": 588,
+                "edgeOffsets": 518,
                 "children": ""
             },
             "children": [],
@@ -439,10 +469,10 @@
                 "Height": 34,
                 "Width": 34,
                 "Visible": true,
-                "X": 235,
-                "Y": 500,
-                "RelativeX": 235,
-                "RelativeY": 500,
+                "X": 237,
+                "Y": 466,
+                "RelativeX": 237,
+                "RelativeY": 466,
                 "ResizeMode": "STRETCH",
                 "style": {
                     "marginTop": 0,
@@ -473,7 +503,7 @@
                 "Disabled": false,
                 "ParentId": "ee1dd55a-55fe-45f8-b990-310375177915",
                 "position": "absolute",
-                "edgeOffsets": 471
+                "edgeOffsets": 466.00000000000006
             },
             "children": [],
             "id": "252c3aa0-d74c-4da1-8790-65260d21b09c",

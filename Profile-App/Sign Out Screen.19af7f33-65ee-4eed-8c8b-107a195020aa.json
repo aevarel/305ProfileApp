@@ -57,17 +57,47 @@
     },
     "children": [
         {
+            "type": "AdMobBanner",
+            "label": "AdMob Banner",
+            "translatedName": "AdMob Banner",
+            "properties": {
+                "Visible": true,
+                "AdUnitID": "ca-app-pub-3940256099942544/6300978111",
+                "AdUnitID_iOS": "ca-app-pub-3940256099942544/6300978111",
+                "TestMode": true,
+                "Width": 375,
+                "Height": 32,
+                "X": 0,
+                "ParentId": "19af7f33-65ee-4eed-8c8b-107a195020aa",
+                "Y": 633,
+                "RelativeX": 0,
+                "RelativeY": 633,
+                "position": "absolute",
+                "edgeOffsets": 633,
+                "style": {
+                    "position": "absolute",
+                    "left": "19.2%",
+                    "top": "85.67716263938344%",
+                    "display": "flex"
+                }
+            },
+            "children": [],
+            "id": "21134b13-df17-42a5-90fe-b60d15f44e39",
+            "thunkableVersion": 423,
+            "name": "AdMob_Banner3"
+        },
+        {
             "type": "Image",
             "translatedName": "Image",
             "properties": {
                 "Picture": "aeygram-logo.png",
                 "resizeMode": "stretch",
-                "Height": 47,
-                "Width": 117,
+                "Height": 92,
+                "Width": 149,
                 "Visible": true,
-                "X": 123,
+                "X": 116,
                 "Y": 0,
-                "RelativeX": 123,
+                "RelativeX": 116,
                 "RelativeY": 0,
                 "ResizeMode": "STRETCH",
                 "style": {
@@ -116,10 +146,10 @@
                 "Height": 145,
                 "Width": 313,
                 "Visible": true,
-                "X": 25,
-                "Y": 462,
-                "RelativeX": 25,
-                "RelativeY": 462,
+                "X": 28,
+                "Y": 355,
+                "RelativeX": 28,
+                "RelativeY": 355,
                 "ResizeMode": "STRETCH",
                 "style": {
                     "color": "rgba(0, 0, 0, 1)",
@@ -161,7 +191,7 @@
                 },
                 "ParentId": "19af7f33-65ee-4eed-8c8b-107a195020aa",
                 "position": "absolute",
-                "edgeOffsets": 462.99999999999994,
+                "edgeOffsets": 355.99999999999994,
                 "children": ""
             },
             "children": [],
